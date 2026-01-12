@@ -15,7 +15,7 @@ const config: QuartzConfig = {
     },
     locale: "ko-KR", 
     baseUrl: "wiki.zzik.com", 
-    ignorePatterns: ["private", "templates", ".obsidian"],
+    ignorePatterns: ["private", "templates", "Templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",
