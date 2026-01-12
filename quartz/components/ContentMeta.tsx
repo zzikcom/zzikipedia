@@ -7,9 +7,6 @@ import { JSX } from "preact"
 import style from "./styles/contentMeta.scss"
 
 interface ContentMetaOptions {
-  /**
-   * Whether to display reading time
-   */
   showReadingTime: boolean
   showComma: boolean
 }
@@ -20,7 +17,6 @@ const defaultOptions: ContentMetaOptions = {
 }
 
 export default ((opts?: Partial<ContentMetaOptions>) => {
-  // Merge options with defaults
   const options: ContentMetaOptions = { ...defaultOptions, ...opts }
 
   function ContentMetadata({ cfg, fileData, displayClass }: QuartzComponentProps) {
@@ -33,7 +29,6 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
         segments.push(<Date date={getDate(cfg, fileData)!} locale={cfg.locale} />)
       }
 
-      // Display reading time if enabled
       if (options.showReadingTime) {
         const { minutes, words: _words } = readingTime(text)
         const displayedTime = i18n(cfg.locale).components.contentMeta.readingTime({
@@ -41,6 +36,22 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
         })
         segments.push(<span>{displayedTime}</span>)
       }
+
+      const githubLink = `https://github.com/zzikcom/wiki/blame/main/content/${fileData.slug}.md`
+      segments.push(
+        <a
+          href={githubLink}
+          target="_blank"
+          style={{
+            marginLeft: "4px",
+            color: "var(--secondary)",
+            fontSize: "0.9em",
+            textDecoration: "none"
+          }}
+        >
+          [수정내역]
+        </a>
+      )
 
       return (
         <p show-comma={options.showComma} class={classNames(displayClass, "content-meta")}>
