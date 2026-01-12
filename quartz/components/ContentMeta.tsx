@@ -43,10 +43,11 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
           href={githubLink}
           target="_blank"
           style={{
-            marginLeft: "4px",
-            color: "var(--secondary)",
-            fontSize: "0.9em",
-            textDecoration: "none"
+            marginLeft: "6px",
+            color: "var(--gray)",
+            fontSize: "0.85em",
+            textDecoration: "none",
+            opacity: 0.8
           }}
         >
           [수정내역]
