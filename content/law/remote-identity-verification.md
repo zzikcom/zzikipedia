@@ -20,11 +20,10 @@ draft: false
 노트 콜아웃입니다.
 
 
->[!info]
->인포 콜아웃입니다.
+>[!info] 인포 콜아웃입니다.
 
->[!abstract]
->Abstract 콜아웃입니다.
+
+>[!abstract] Abstract 콜아웃입니다.
 
 
 >[!todo]
@@ -35,8 +34,7 @@ draft: false
 >Tip 콜아웃입니다.
 
 
->[!Success]
->Success 콜아웃입니다.
+>[!Success] Success 콜아웃입니다.
 
 
 >[!Question]
