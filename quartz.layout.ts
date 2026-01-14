@@ -37,7 +37,25 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.DesktopOnly(Component.RecentNotes({
+      title: "최근 게시물",
+      limit: 5, // 보여줄 개수
+      linkToPages: true, // 제목 클릭 시 해당 페이지로 이동
+      filter: (f) => f.slug !== "index", // 메인 페이지는 제외
+    })),
+    Component.Explorer({
+      title: "탐색기",
+      folderClickBehavior: "collapse",
+      mapFn: (node) => {
+        // 영문 폴더명을 한글로 치환
+        if (node.name === "law") {
+          node.displayName = "법·법학·법무"
+        }
+        if (node.name === "finance") {
+          node.displayName = "금융"
+        }
+        // 필요하신 폴더명을 계속 추가하세요
+      }),
   ],
   right: [
     Component.Graph(),
