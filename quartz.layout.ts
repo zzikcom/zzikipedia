@@ -13,22 +13,6 @@ export const sharedPageComponents: SharedLayout = {
   }),
 }
 
-const explorerConfig = Component.Explorer({
-  title: "탐색기",
-  folderClickBehavior: "collapse",
-  folderDefaultState: "collapsed",
-  useSavedState: true,
-  mapFn: (node) => {
-    // node.name은 실제 폴더/파일명이고 node.displayName은 화면 표시 이름입니다.
-    if (node.name === "law") {
-      node.displayName = "⚖️ 법·법학·법무"
-    } else if (node.name === "finance") {
-      node.displayName = "💰 금융"
-    }
-    // 수정된 node는 반환할 필요 없이 내부에서 속성만 변경하면 됩니다.
-  },
-})
-
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
@@ -53,13 +37,7 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.DesktopOnly(Component.RecentNotes({
-      title: "최근 게시물",
-      limit: 5, // 보여줄 개수
-      linkToPages: true, // 제목 클릭 시 해당 페이지로 이동
-      filter: (f) => f.slug !== "index", // 메인 페이지는 제외
-    })),
-    explorerConfig,
+    Component.Explorer(),
   ],
   right: [
     Component.Graph(),
@@ -83,7 +61,7 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    explorerConfig,
+    Component.Explorer(),
   ],
   right: [],
 }
