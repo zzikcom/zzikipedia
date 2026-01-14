@@ -16,25 +16,42 @@
   }
 }
 
+// quartz/styles/custom.scss
+
 .recent-notes {
-  h3 {
-    font-size: 1rem !important;
-    margin-bottom: 0.5rem !important;
+  // 1. "최근 게시물" 타이틀 스타일 (탐색기 제목과 통일)
+  & > h3 {
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 0.75rem !important;
   }
-  
+
   .recent-ul {
     padding-left: 0 !important;
-    
+    list-style: none !important; 
+
     .recent-li {
-      margin-bottom: 0.4rem !important;
-      
-      a {
-        font-size: 0.9rem !important;
-        font-weight: 400 !important;
-      }
+      margin-bottom: 0.2rem !important; 
       
       .meta {
-        font-size: 0.75rem !important;
+        display: none !important;
+      }
+
+      .desc h3 {
+        margin: 0 !important;
+        font-size: 0.95rem !important; 
+        font-weight: 400 !important;  
+        line-height: 1.5 !important;
+
+        a {
+          color: var(--secondary) !important;
+          text-decoration: none !important;
+          
+          &:hover {
+            color: var(--tertiary) !important;
+            text-decoration: none !important;
+          }
+        }
       }
     }
   }
