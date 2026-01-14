@@ -3,7 +3,7 @@ import * as Plugin from "./quartz/plugins"
 
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "wiki.zzik.com",
+    pageTitle: "Zzikipedia",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -11,7 +11,7 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "ko-KR", 
-    baseUrl: "wiki.zzik.com", 
+    baseUrl: "pedia.zzik.com", 
     ignorePatterns: ["private", "templates", "Templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
