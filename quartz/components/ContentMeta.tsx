@@ -37,7 +37,7 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
         segments.push(<span>{displayedTime}</span>)
       }
 
-      const githubLink = `https://github.com/zzikcom/wiki/blame/main/content/${fileData.slug}.md`
+      const githubLink = `https://github.com/zzikcom/zzikipedia/blame/main/content/${fileData.slug}.md`
       segments.push(
         <a
           href={githubLink}
