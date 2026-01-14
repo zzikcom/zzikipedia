@@ -1,3 +1,17 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+.page-title {
+  font-size: 1.5rem; 
+  margin: 1rem 0;  
+
+  & a {
+    color: var(--dark); 
+    text-decoration: none;
+    font-weight: 700; 
+    
+    &:hover {
+      color: var(--secondary);
+    }
+  }
+}
