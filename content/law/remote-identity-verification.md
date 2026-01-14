@@ -4,8 +4,8 @@ permalink: remote-identity-verification
 description:
 aliases: []
 tags: []
-date: 2026-01-14 13:17
-lastmod: 2026-01-14 18:58
+created: 2026-01-14 13:17
+last-modified: 2026-01-14 18:58
 draft: false
 ---
 ## 개요
