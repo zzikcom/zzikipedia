@@ -1,7 +1,5 @@
 @use "./base.scss";
 
-// put your custom CSS here!
-
 .page-title {
   font-size: 1.5rem; 
   margin: 1rem 0;  
@@ -28,7 +26,7 @@
     padding-left: 0 !important;
 
     .recent-li {
-      margin-bottom: 0.2rem !important; 
+      margin-bottom: 0.05rem !important; 
       
       .meta {
         display: none !important;
@@ -38,7 +36,7 @@
         margin: 0 !important;
         font-size: 0.95rem !important; 
         font-weight: 400 !important;  
-        line-height: 1.5 !important;
+        line-height: 1.2 !important; 
 
         a {
           color: var(--secondary) !important;
@@ -54,8 +52,13 @@
   }
 }
 
-.explorer .explorer-content li > a {
-  font-size: 0.95rem !important;
-  line-height: 1.5 !important;
-  font-weight: 400 !important;
+.explorer .explorer-content li {
+  margin-bottom: 0.05rem !important; 
+  
+  & > a {
+    font-size: 0.95rem !important;
+    line-height: 1.2 !important; 
+    font-weight: 400 !important;
+    display: inline-block;
+  }
 }
