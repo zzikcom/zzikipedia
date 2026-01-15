@@ -24,17 +24,18 @@
 
   .recent-ul {
     padding-left: 0 !important;
+    margin: 0 !important; 
 
     .recent-li {
       margin-bottom: 0.05rem !important; 
       
       .section {
-        margin: 0 !important;
+        margin: 0 !important; 
         padding: 0 !important;
       }
 
       .meta {
-        display: none !important;
+        display: none !important; 
       }
 
       .desc h3 {
@@ -42,12 +43,12 @@
         padding: 0 !important;
         font-size: 0.95rem !important; 
         font-weight: 400 !important;  
-        line-height: 1.2 !important;
+        line-height: 1.4 !important;
 
         a {
           color: var(--secondary) !important;
           text-decoration: none !important;
-          display: inline-block; 
+          display: inline-block;
           
           &:hover {
             color: var(--tertiary) !important;
@@ -60,7 +61,7 @@
 
 .explorer {
   .folder-container {
-    margin-bottom: 0.15rem !important;
+    margin-bottom: 0.2rem !important;
   }
 
   .explorer-content li {
