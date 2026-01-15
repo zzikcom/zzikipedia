@@ -19,7 +19,7 @@
   & > h3 {
     font-size: 1.1rem !important;
     font-weight: 600 !important;
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0.75rem !important;
   }
 
   .recent-ul {
@@ -27,14 +27,17 @@
     margin: 0 !important; 
 
     .recent-li {
-      margin-bottom: 0.05rem !important; 
+      margin: 0 0 0.10rem 0 !important; 
+      padding: 0 !important;
       
       .section {
         margin: 0 !important; 
         padding: 0 !important;
+        display: block !important; 
       }
 
-      .meta {
+  
+      .meta, .tags {
         display: none !important; 
       }
 
