@@ -30,22 +30,26 @@ const defaultOptions: Options = {
     return node
   },
   sortFn: (a, b) => {
-    // 1. 폴더와 파일이 섞여 있을 경우: 폴더를 항상 위로 보냄
+    // 1. 폴더는 항상 위로
     if (a.isFolder && !b.isFolder) return -1
     if (!a.isFolder && b.isFolder) return 1
-
-    // 2. 둘 다 파일인 경우: 수정일(date) 기준 내림차순 정렬 (최신순)
+    
+    // 2. 둘 다 파일인 경우: 최근 수정일 기준 정렬
     if (!a.isFolder && !b.isFolder) {
-      const dateA = new Date(a.data?.date ?? 0).getTime()
-      const dateB = new Date(b.data?.date ?? 0).getTime()
+      // Quartz의 파일 데이터 구조에 맞게 날짜 접근
+      const dateA = a.file?.dates?.modified ?? a.file?.dates?.created ?? new Date(0)
+      const dateB = b.file?.dates?.modified ?? b.file?.dates?.created ?? new Date(0)
       
-      // 날짜가 같지 않다면 최신 날짜가 위로 오게 함
-      if (dateA !== dateB) {
-        return dateB - dateA
+      const timeA = new Date(dateA).getTime()
+      const timeB = new Date(dateB).getTime()
+      
+      // 최신 파일이 위로 오도록 (내림차순)
+      if (timeA !== timeB) {
+        return timeB - timeA
       }
     }
-
-    // 3. 둘 다 폴더이거나 날짜가 같은 파일인 경우: 이름순 정렬
+    
+    // 3. 폴더끼리 또는 날짜가 같은 파일끼리는 이름순
     return a.displayName.localeCompare(b.displayName, undefined, {
       numeric: true,
       sensitivity: "base",
