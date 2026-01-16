@@ -90,7 +90,7 @@
 }
 
 .callout-content > p:first-child {
-  margin-top: 0 !important;
+  margin-top: 0.15rem !important;
 }
 
 .callout-content > p {
@@ -98,9 +98,9 @@
 }
 
 .callout-content > p + :is(ul, ol) {
-  margin-top: 0.05rem !important;
+  margin-top: 0.10rem !important;
 }
 
 .callout-content > :is(ul, ol) {
-  margin-top: 0.05rem !important;
+  margin-top: 0.10rem !important;
 }
