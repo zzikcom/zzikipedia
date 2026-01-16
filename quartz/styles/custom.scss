@@ -104,3 +104,13 @@
 .callout-content > :is(ul, ol) {
   margin-top: 0.10rem !important;
 }
+
+.callout:not(:has(.callout-content > *)) .callout-title {
+  padding-bottom: 0.45rem !important;
+}
+
+.callout:not(:has(.callout-content > *)) .callout-title + .callout-content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  display: none !important;
+}
